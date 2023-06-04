@@ -11,7 +11,7 @@ function App() {
   //api url
   const url = `/weather/${zipCode}`;
 
-  const searchZip = (event) => {
+  const searchZip = async (event) => {
     if (event.key === 'Enter') {
       axios
         .get(url)
@@ -27,9 +27,18 @@ function App() {
       setZipCode('');
     }
   };
+  const getBackgroundClass = (weatherCondition) => {
+    if (!weatherCondition) return "default-background";
 
+    const classes = {
+      Clouds: "cloudy-background",
+      Rain: "rainy-background",
+      Clear: "sunny-background"
+    };
+    return classes[weatherCondition] || "default-background";
+  };
   return (
-    <div className="app">
+    <div className={`app ${data.weather ? getBackgroundClass(data.weather[0].main) : "default-background"}`}>
       <div className="search">
         <input
           value={zipCode}
