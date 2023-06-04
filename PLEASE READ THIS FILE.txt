@@ -1,0 +1,11 @@
+To run the application:
+
+Open a terminal for the server folder, and type the command "node app.js" to run the server.
+
+On the main project, run the command "npm start" to run the application in your browser. 
+
+It would be wise to run an "npm install" on both parts before running the application. 
+
+Here is the link to our repository:
+https://github.com/SteveD5249/wpr_project.git
+
