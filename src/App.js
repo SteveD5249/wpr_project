@@ -8,6 +8,7 @@ function App() {
   const [zipCode, setZipCode] = useState('');
   const [error, setError] = useState('');
 
+  //api url
   const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},ZA&appid=8a591b7d222aae763fc9d6e5a1f06b16&units=metric`;
 
   const searchZip = (event) => {
